@@ -10,8 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.0.4
         with:
           ACCESS_TOKEN: ${{ secrets.ACTIONS_CI }}
           BASE_BRANCH: master # The branch the action should deploy from.
