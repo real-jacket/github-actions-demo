@@ -10,8 +10,8 @@ jobs:
       - name: Build
         run: npm install && npm run build
 
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3-test
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.0.4
         with:
           ACCESS_TOKEN: ${{ secrets.ACTIONS_CI }}
           BASE_BRANCH: master
