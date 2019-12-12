@@ -1,5 +1,8 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+    - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -10,10 +13,11 @@ jobs:
       - name: Build
         run: npm install && npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.0.4
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACTIONS_CI }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages
-          FOLDER: build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          # ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PERSONAL_TOKEN: ${{ secrets.actions }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./build
