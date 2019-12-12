@@ -13,8 +13,8 @@ jobs:
       - name: Build
         run: npm install && npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2
+      - name: GitHub Pages Deploy
+        uses: peaceiris/actions-gh-pages@v2.5.1
         env:
           # ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PERSONAL_TOKEN: ${{ secrets.REACT_DEMO }}
