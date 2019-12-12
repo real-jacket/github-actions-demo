@@ -4,9 +4,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.0.4
         with:
